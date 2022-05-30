@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>JwtAuthentication.Gui</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JwtAuthentication.Common\JwtAuthentication.Common.csproj" />
+    <ProjectReference Include="..\JwtAuthentication.Database\JwtAuthentication.Database.csproj" />
+    <ProjectReference Include="..\JwtAuthentication.Utils\JwtAuthentication.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="JsonFiles\Database.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
