@@ -8,11 +8,11 @@
 
         public string Username { get; set; }
 
-        public byte[] Hash { get; set; }
+        public string Hash { get; set; }
 
         public int HashSize { get; set; }
 
-        public byte[] Salt { get; set; }
+        public string Salt { get; set; }
 
         public int SaltSize { get; set; }
         
@@ -30,8 +30,8 @@
             
             Username = string.Empty;
 
-            Hash = new byte[0];
-            Salt = new byte[0];
+            Hash = string.Empty;
+            Salt = string.Empty;
         }
 
         #endregion

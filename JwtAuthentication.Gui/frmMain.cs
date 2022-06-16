@@ -103,6 +103,26 @@ namespace JwtAuthentication.Gui
 
             try
             {
+                //string password = "mops123";
+                //byte[] bytesPassword = Encoding.ASCII.GetBytes(password);
+
+                //int iterations = RandomUtils.RandomNumber(Constants.MAX_ITERATIONS);
+
+                //int saltSize = RandomUtils.RandomNumber(Constants.MAX_SALT_SIZE);
+                //byte[] bytesSalt = EncryptionUtils.GenerateSalt(saltSize);
+
+                //int hashSize = RandomUtils.RandomNumber(Constants.MAX_HASH_SIZE);
+                //byte[] hash = EncryptionUtils.GenerateHash(bytesPassword, bytesSalt, iterations, hashSize);
+
+                //string saltString = Convert.ToBase64String(bytesSalt);
+                //string hashString = Convert.ToBase64String(hash);
+
+                //byte[] newSalt = Convert.FromBase64String(saltString);
+                //byte[] newHash = Convert.FromBase64String(hashString);
+
+                //bool compareHash = GeneralUtils.ByteArrayCompare(hash, newHash);
+                //bool compareSalt = GeneralUtils.ByteArrayCompare(bytesSalt, newSalt);
+
                 return true;
             }
             catch (Exception e)
@@ -195,10 +215,10 @@ namespace JwtAuthentication.Gui
 
                     Iterations = iterations,
                     
-                    Salt = bytesSalt,
+                    Salt = Convert.ToBase64String(bytesSalt),
                     SaltSize = saltSize,
 
-                    Hash = hash,
+                    Hash = Convert.ToBase64String(hash),
                     HashSize = hashSize,
 
                     CreationDateTime = DateTime.UtcNow

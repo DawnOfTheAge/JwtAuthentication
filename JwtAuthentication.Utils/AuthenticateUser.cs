@@ -41,11 +41,12 @@ namespace JwtAuthentication.Utils
                 }
 
                 byte[] bytesPassword = Encoding.ASCII.GetBytes(password);
-                byte[] bytesSalt = user.Salt;
+                byte[] bytesSalt = Convert.FromBase64String(user.Salt);
+                byte[] bytesHash = Convert.FromBase64String(user.Hash);
 
-                byte[] createdHash = EncryptionUtils.GenerateHash(bytesPassword, user.Salt, user.Iterations, user.HashSize);
+                byte[] createdHash = EncryptionUtils.GenerateHash(bytesPassword, bytesSalt, user.Iterations, user.HashSize);
 
-                return GeneralUtils.ByteArrayCompare(createdHash, user.Hash);
+                return GeneralUtils.ByteArrayCompare(createdHash, bytesHash);
             }
             catch (Exception e)
             {
